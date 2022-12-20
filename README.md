@@ -10,6 +10,7 @@
 * 서울시 따릉이 대여량 예측 경진대회의 데이터를 이용하였습니다.
 * AWS EC2를 이용하여 서버를 관리하였습니다.
 * Github Actions를 이용한 CI/CD를 사용하였습니다.
+* 유지보수작업을 수월하게 하기 위해서 다른 파일에서 함수를 만들고 그 함수를 import해서 작업을 하였습니다.
 
 ## 📌hyunsungKR
 <a href="https://github.com/hyunsungKR/"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/></a> <a href="https://hyunsungstory.tistory.com/"><img src="https://img.shields.io/badge/Tistory-466BB0?style=flat-square&logo=Tistory&logoColor=white"/></a>
