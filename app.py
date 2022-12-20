@@ -10,7 +10,7 @@ st.set_page_config(page_title='ddareungi')
 
 
 def main() :
-    st.header('🚴🏻‍♀️ 서울시 따릉이 대여량과 대여랑 예측')
+    st.header('🚴🏻‍♀️ 서울시 따릉이 대여량과 대여량 예측')
     with st.sidebar:
         st.image('http://love.seoul.go.kr/Pds/Board/seoul_news_write/Editor/0501_03_02.png')
         menu = option_menu("App Menu", ["Home", "EDA", "ML"],
