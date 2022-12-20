@@ -95,6 +95,19 @@ def run_eda_app() :
         train_corr=train[column_list].corr()
         sb.heatmap(data=train_corr,cmap='coolwarm',annot=True,fmt='.1f',linewidths=0.8,vmin=-1,vmax=1)
         st.pyplot(fig2)
+        with st.expander('데이터프레임 컬럼 상세 설명') :
+            st.subheader('데이터프레임 컬럼 상세 설명')
+            st.text('id : 고유 id')
+            st.text('hour : 시간)')
+            st.text('temperature : 기온)')
+            st.text('precipitation : 비가 오지 않았으면 0, 비가 오면 1)')
+            st.text('windspeed : 풍속(평균)')
+            st.text('humidity : 습도')
+            st.text('visibility : 시정(視程), 시계(視界)(특정 기상 상태에 따른 가시성을 의미)')
+            st.text('ozone : 오존')
+            st.text('pm10 : 미세먼지(머리카락 굵기의 1/5에서 1/7 크기의 미세먼지)')
+            st.text('pm2.5 : 미세먼지(머리카락 굵기의 1/20에서 1/30 크기의 미세먼지)')
+            st.text('count : 시간에 따른 따릉이 대여 수')
 
 
 

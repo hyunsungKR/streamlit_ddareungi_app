@@ -5,7 +5,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
-regressor = joblib.load('data/regressor.pkl')
+
+regressor = joblib.load('regressor2.pkl')
 
 def run_ml_app():
     st.subheader('따릉이 대여수 예측')
@@ -37,21 +38,25 @@ def run_ml_app():
     else :
         rain = 1
     
-    temp = st.number_input('기온 입력'-25,40)
+    temp = st.number_input('기온 입력',-25,40,15)
 
-    wind = st.number_input('풍속 입력',0,20)
+    wind = st.number_input('풍속 입력',0,20,3)
 
     new_data=np.array([temp,rain,wind])
 
     new_data = new_data.reshape(1,3)
 
+    regressor = joblib.load('regressor2.pkl')
+
     y_pred = regressor.predict(new_data)
 
-    y_pred = round(y_pred[0],1)
+    y_pred = round(y_pred[0])
 
-    st.info('예측한 따릉이 대여 갯수는 {}입니다.'.format(y_pred))
 
-    print(y_pred)
+    if y_pred < 0 :
+        st.warning('입력하신 데이터로는 대여량을 예측하기 어렵습니다.')
+    else :
+        st.info('예측한 자전거 대여량은 {}대 입니다.'.format(y_pred))
 
     
 
