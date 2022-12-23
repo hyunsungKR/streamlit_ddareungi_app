@@ -35,15 +35,15 @@ def run_eda_app() :
         with st.expander('데이터프레임 컬럼 상세 설명') :
             st.subheader('데이터프레임 컬럼 상세 설명')
             st.text('id : 고유 id')
-            st.text('hour : 시간)')
-            st.text('temperature : 기온)')
-            st.text('precipitation : 비가 오지 않았으면 0, 비가 오면 1)')
-            st.text('windspeed : 풍속(평균)')
-            st.text('humidity : 습도')
-            st.text('visibility : 시정(視程), 시계(視界)(특정 기상 상태에 따른 가시성을 의미)')
-            st.text('ozone : 오존')
-            st.text('pm10 : 미세먼지(머리카락 굵기의 1/5에서 1/7 크기의 미세먼지)')
-            st.text('pm2.5 : 미세먼지(머리카락 굵기의 1/20에서 1/30 크기의 미세먼지)')
+            st.text('hour : 시간')
+            st.text('hour_bef_temperature : 1시간 전 기온')
+            st.text('hour_bef_precipitation : 1시간 전 비 정보, 비가 오지 않았으면 0, 비가 오면 1')
+            st.text('hour_bef_windspeed : 1시간 전 풍속(평균)')
+            st.text('hour_bef_humidity : 1시간 전 습도')
+            st.text('hour_bef_visibility : 1시간 전 시정(視程), 시계(視界)(특정 기상 상태에 따른 가시성을 의미')
+            st.text('hour_bef_ozone : 1시간 전 오존')
+            st.text('hour_bef_pm10 : 1시간 전 미세먼지(머리카락 굵기의 1/5에서 1/7 크기의 미세먼지)')
+            st.text('hour_bef_pm2.5 : 1시간 전 미세먼지(머리카락 굵기의 1/20에서 1/30 크기의 미세먼지)')
             st.text('count : 시간에 따른 따릉이 대여 수')
     
     st.subheader('시간대별 대여')
@@ -57,9 +57,24 @@ def run_eda_app() :
         plt.text(6, 150, 'go work')
         plt.text(16, 150, 'leave work')
         st.pyplot(fig1)
+
+    
     chart_list = ['라인 차트','영역 차트','바 차트']
     column_menu=train.columns[2:]
     selected_chart=st.selectbox('차트를 선택하세요.',chart_list)
+    with st.expander('데이터프레임 컬럼 상세 설명') :
+        st.subheader('데이터프레임 컬럼 상세 설명')
+        st.text('id : 고유 id')
+        st.text('hour : 시간')
+        st.text('hour_bef_temperature : 1시간 전 기온')
+        st.text('hour_bef_precipitation : 1시간 전 비 정보, 비가 오지 않았으면 0, 비가 오면 1')
+        st.text('hour_bef_windspeed : 1시간 전 풍속(평균)')
+        st.text('hour_bef_humidity : 1시간 전 습도')
+        st.text('hour_bef_visibility : 1시간 전 시정(視程), 시계(視界)(특정 기상 상태에 따른 가시성을 의미')
+        st.text('hour_bef_ozone : 1시간 전 오존')
+        st.text('hour_bef_pm10 : 1시간 전 미세먼지(머리카락 굵기의 1/5에서 1/7 크기의 미세먼지)')
+        st.text('hour_bef_pm2.5 : 1시간 전 미세먼지(머리카락 굵기의 1/20에서 1/30 크기의 미세먼지)')
+        st.text('count : 시간에 따른 따릉이 대여 수')
 
     if selected_chart == chart_list[0]:
         choice_list=st.multiselect('컬럼을 선택하세요.',column_menu)
@@ -99,14 +114,14 @@ def run_eda_app() :
             st.subheader('데이터프레임 컬럼 상세 설명')
             st.text('id : 고유 id')
             st.text('hour : 시간)')
-            st.text('temperature : 기온)')
-            st.text('precipitation : 비가 오지 않았으면 0, 비가 오면 1)')
-            st.text('windspeed : 풍속(평균)')
-            st.text('humidity : 습도')
-            st.text('visibility : 시정(視程), 시계(視界)(특정 기상 상태에 따른 가시성을 의미)')
-            st.text('ozone : 오존')
-            st.text('pm10 : 미세먼지(머리카락 굵기의 1/5에서 1/7 크기의 미세먼지)')
-            st.text('pm2.5 : 미세먼지(머리카락 굵기의 1/20에서 1/30 크기의 미세먼지)')
+            st.text('hour_bef_temperature : 1시간 전 기온')
+            st.text('hour_bef_precipitation : 1시간 전 비 정보, 비가 오지 않았으면 0, 비가 오면 1')
+            st.text('hour_bef_windspeed : 1시간 전 풍속(평균)')
+            st.text('hour_bef_humidity : 1시간 전 습도')
+            st.text('hour_bef_visibility : 1시간 전 시정(視程), 시계(視界)(특정 기상 상태에 따른 가시성을 의미')
+            st.text('hour_bef_ozone : 1시간 전 오존')
+            st.text('hour_bef_pm10 : 1시간 전 미세먼지(머리카락 굵기의 1/5에서 1/7 크기의 미세먼지)')
+            st.text('hour_bef_pm2.5 : 1시간 전 미세먼지(머리카락 굵기의 1/20에서 1/30 크기의 미세먼지)')
             st.text('count : 시간에 따른 따릉이 대여 수')
 
 
